@@ -1,25 +1,33 @@
 from pygame import *
+from random import randint
+
+init
 
 SCREEN_WIDTH = 1800
 SCREEN_HEIGHT = 900
-Size = (SCREEN_WIDTH, SCREEN_HEIGHT)
 
-window = display.set_mode(Size)
+ScreenSize = (SCREEN_WIDTH, SCREEN_HEIGHT)
+
+window = display.set_mode(ScreenSize)
 display.set_caption('Catch Me If You Can')
 
-background = transform.scale(image.load('Background.png'), Size)
+background = transform.scale(image.load('imgs/background.png'), ScreenSize)
 
-GuySize  = (150, 200 )
-CopSize = (200, 200)
+GuySize =  (50 , 100)
+CopSize = (150, 100)
 CarSize = (200, 150)
 
-Guy = transform.scale(image.load('Guy.png'), GuySize)
-Cop = transform.scale( image.load('Cop.png') , CopSize )
-car = transform.rotate(transform.scale(image.load('car.png'), CarSize), 90)
+background = transform.scale(image.load('imgs/background.png'), ScreenSize)
+
+Guy = transform.scale(image.load('imgs/Guy.png'), GuySize)
+Cop = transform.scale(image.load('imgs/Cop.png'), CopSize)
+car = transform.rotate(
+    transform.scale(image.load('imgs/car.png'), CarSize),
+    90  )
 # Player properties
 GuyPosx = SCREEN_WIDTH // 2 
 GuyPosy = SCREEN_HEIGHT // 2 
-GuySpeed = 5
+GuySpeed = 2
 
 
 CopPosx = 100
@@ -28,7 +36,7 @@ CarSpeed = 2
 
 game = True
 
-
+CarPosy = 100
 
 while game:
     #detect if game ended
